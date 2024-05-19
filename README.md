@@ -1,4 +1,4 @@
-# MyApp
+# MyGit
 
 This repository contains a multi-component application including a Go application, a Next.js (TypeScript) application, and a WordPress site. The application is containerized using Docker and orchestrated using Docker Compose.
 
