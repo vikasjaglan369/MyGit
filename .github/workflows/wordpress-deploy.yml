@@ -1,0 +1,37 @@
+name: Deploy WordPress
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Staging Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Sync WordPress files to staging server
+        run: |
+          rsync -avz --delete ./wordpress/ ${{ secrets.STAGING_USERNAME }}@${{ secrets.STAGING_HOST }}:/path/to/wordpress
+
+      - name: Run post-deployment script
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /root/MyApp/wordpress
+            wp core update
+            wp plugin update --all
+            wp theme update --all
+
