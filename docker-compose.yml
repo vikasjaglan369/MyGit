@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  go-app:
+    build:
+      context: ./go-app
+    ports:
+      - "8080:8080"
+
+  next-app:
+    build:
+      context: ./next-app
+    ports:
+      - "3000:3000"
+
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8081:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./wordpress:/var/www/html/wp-content/themes/my-theme
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+

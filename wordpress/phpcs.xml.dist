@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress-VIP">
+    <description>WordPress-VIP coding standards.</description>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="80"/>
+    <file>.</file>
+    <exclude-pattern>wp-content/plugins/</exclude-pattern>
+    <exclude-pattern>wp-content/themes/</exclude-pattern>
+    <rule ref="WordPress-VIP"/>
+</ruleset>
+
