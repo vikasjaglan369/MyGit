@@ -18,7 +18,7 @@ Git: Ensure you have Git installed.
 
       ##############Clone the Repository:###############
 
-git clone https://github.com/vikasjaglan369/MyGit.git Myapp ; cd MyApp
+git clone https://github.com/vikasjaglan369/MyGit.git MyApp ; cd MyApp
 
       ###############Environment Variables:###############
 
