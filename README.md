@@ -16,12 +16,12 @@ Git: Ensure you have Git installed.
 
 # Setup
 
-      ####################Clone the Repository:####################
+      ##############Clone the Repository:###############
 
 git clone https://github.com/vikasjaglan369/MyGit.git
 cd MyApp
 
-      ####################Environment Variables:####################
+      ###############Environment Variables:###############
 
 Create a .env file at the root of the project and add the following variables:
 
@@ -36,13 +36,13 @@ SSH_PRIVATE_KEY=your_ssh_private_key
 DOCKER_USERNAME=your_docker_username
 DOCKER_PASSWORD=your_docker_password
 
-      ####################Build and Run the Containers:####################
+      ##############Build and Run the Containers:###############
 
 Use Docker Compose to build and start the containers.
 
 docker-compose up --build
 
-      ####################Accessing the Applications:####################
+      ##############Accessing the Applications:###############
 
 Go Application: http://localhost:8080
 Next.js Application: http://localhost:3000
@@ -77,7 +77,7 @@ If you have any questions or need further assistance, feel free to reach out to 
 - **Email**: vikasjaglan369@gmail.com
 - **GitHub**: [vikasjaglan369](https://github.com/vikasjaglan369)
 - **Docker Hub**: [vikas369](https://hub.docker.com/u/vikas369)
-- **Phone Numner**: 91-9138105989
+- **Phone Number**: 91-9138105989
 - **Location**: New Delhi / INDIA
 
 I am available to help and look forward to connecting with you!

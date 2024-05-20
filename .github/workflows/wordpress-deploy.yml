@@ -21,7 +21,7 @@ jobs:
 
       - name: Sync WordPress files to staging server
         run: |
-          rsync -avz --delete ./wordpress/ ${{ secrets.STAGING_USERNAME }}@${{ secrets.STAGING_HOST }}:/path/to/wordpress
+          rsync -avz --delete ./wordpress/ ${{ secrets.STAGING_USERNAME }}@${{ secrets.STAGING_HOST }}:/root/MyApp/wordpress
 
       - name: Run post-deployment script
         uses: appleboy/ssh-action@master
