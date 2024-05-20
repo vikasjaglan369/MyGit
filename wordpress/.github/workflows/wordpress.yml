@@ -27,7 +27,7 @@ jobs:
     - name: WordPress setup
       run: |
         wp core download
-        wp config create --dbname=wordpress --dbuser=root --dbpass= --dbhost=localhost
+        wp config create --dbname=wordpress --dbuser=root --dbpass=password --dbhost=localhost
         wp core install --url="http://localhost:8080" --title="My WordPress Site" --admin_user="admin" --admin_password="password" --admin_email="admin@example.com"
     - name: Build Docker image
       run: docker build -t vikas369/mydocker-7:wordpress-latest ./wordpress
@@ -38,4 +38,7 @@ jobs:
 
 - run: composer require --dev squizlabs/php_codesniffer
 - run: vendor/bin/phpcs --standard=WordPress .
+
+- name: Run PHPCS
+  run: vendor/bin/phpcs --standard=phpcs.xml.dist .
 
